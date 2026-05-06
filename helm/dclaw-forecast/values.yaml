@@ -1,0 +1,26 @@
+replicaCount: 1
+
+frontend:
+  image:
+    repository: dclaw-forecast-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 3048
+  ingress:
+    enabled: false
+
+backend:
+  image:
+    repository: dclaw-forecast-backend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 8134
+  env:
+    FORECAST_DATABASE_URL: "postgresql+asyncpg://postgres:postgres@postgres:5432/dclaw_forecast"
+
+database:
+  name: dclaw_forecast

@@ -1,0 +1,4 @@
+DClaw Forecast deployed!
+
+Frontend: http://dclaw-forecast.local
+Backend API: http://dclaw-forecast-backend:8134
