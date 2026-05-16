@@ -1,5 +1,8 @@
 # DClaw Forecast — v1.2 Feature Roadmap
 
+> 📘 **REVISED PRD v2.3 available:** See `REVISED-PRD.md` for complete gap analysis, current state, and full feature roadmap.
+
+
 > Based on: Y Combinator vertical SaaS principles, trending GitHub repos (prophet, nixtla), AI product research (Databricks, DataRobot, Anaplan, Planful)
 
 ## Pre-Flight Checklist
