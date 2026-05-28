@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import init_db
 from app.api.routes import health
+from app.api.v1 import data_series, forecasts, scenarios, ai, dashboard
 
 
 @asynccontextmanager
@@ -15,7 +16,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title=settings.app_name,
-    version="1.0.0",
+    version="1.2.0",
     lifespan=lifespan,
 )
 
@@ -28,6 +29,8 @@ app.add_middleware(
 )
 
 app.include_router(health.router, prefix="/health", tags=["health"])
-# TODO: Wire v1 routers here after creating them
-# from app.api.v1 import some_router
-# app.include_router(some_router.router, prefix="/api/v1/some", tags=["some"])
+app.include_router(data_series.router, prefix="/api/v1/data-series", tags=["data-series"])
+app.include_router(forecasts.router, prefix="/api/v1/forecasts", tags=["forecasts"])
+app.include_router(scenarios.router, prefix="/api/v1/scenarios", tags=["scenarios"])
+app.include_router(ai.router, prefix="/api/v1/ai", tags=["ai"])
+app.include_router(dashboard.router, prefix="/api/v1/dashboard", tags=["dashboard"])

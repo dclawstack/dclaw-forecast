@@ -5,15 +5,11 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "DClaw App",
-  description: "DClaw vertical SaaS application",
+  title: "DClaw Forecast — AI-Powered Demand Forecasting",
+  description: "Predict demand, plan scenarios, and grow with confidence using AI-powered multi-model forecasting.",
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>

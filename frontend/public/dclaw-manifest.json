@@ -1,0 +1,45 @@
+{
+  "app_id": "forecast",
+  "name": "DClaw Forecast",
+  "version": "1.2.0",
+  "category": "Operations",
+  "tagline": "AI-powered demand forecasting and scenario planning",
+  "color": "#10B981",
+  "phase": "Development",
+  "ports": {
+    "backend": 8134,
+    "frontend": 3048
+  },
+  "database": "dclaw_forecast",
+  "features": [
+    "AI Forecast Copilot",
+    "Multi-Model Forecasting (linear, ETS, ensemble)",
+    "Interactive Scenario Planning",
+    "Data Ingestion & Feature Engineering",
+    "Collaborative Planning (P1)",
+    "Forecast Accuracy Tracking (P1)",
+    "Anomaly Detection (P1)",
+    "Hierarchical Forecasting (P1)"
+  ],
+  "health_endpoint": "/health/",
+  "api_base": "/api/v1",
+  "routes": [
+    { "method": "GET", "path": "/api/v1/dashboard", "description": "Dashboard stats" },
+    { "method": "GET", "path": "/api/v1/data-series", "description": "List data series" },
+    { "method": "POST", "path": "/api/v1/data-series", "description": "Create data series" },
+    { "method": "POST", "path": "/api/v1/data-series/{id}/points", "description": "Add data points" },
+    { "method": "POST", "path": "/api/v1/data-series/{id}/import-csv", "description": "Import CSV data" },
+    { "method": "GET", "path": "/api/v1/data-series/{id}/analyze", "description": "Seasonality analysis" },
+    { "method": "GET", "path": "/api/v1/forecasts", "description": "List forecasts" },
+    { "method": "POST", "path": "/api/v1/forecasts/run", "description": "Run forecast" },
+    { "method": "GET", "path": "/api/v1/scenarios", "description": "List scenarios" },
+    { "method": "POST", "path": "/api/v1/scenarios", "description": "Create scenario" },
+    { "method": "GET", "path": "/api/v1/scenarios/{id}/result", "description": "Scenario result" },
+    { "method": "POST", "path": "/api/v1/ai/forecast-chat", "description": "AI copilot chat" },
+    { "method": "GET", "path": "/api/v1/ai/forecast-chat/{session_id}/history", "description": "Chat history" }
+  ],
+  "links": {
+    "github": "https://github.com/dclawstack/dclaw-forecast",
+    "dpanel": "https://dpanel.dclawstack.io"
+  }
+}
